@@ -48,6 +48,7 @@
         width: auto;
         height: 100%;
       }
+    
     }
 
   </style>
@@ -58,10 +59,10 @@
   </video>
 
   <div class="content">
-    <img src="logo.png" alt="Your Image"><br><br>
+    <img src="logo.png" alt="logo"><br><br>
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Termék állapota
+      <button class="btn btn-secondary dropdown-toggle btn-danger" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Termékek:
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li><a class="dropdown-item" href="ujalkatreszek.php">Új</a></li>
