@@ -18,7 +18,7 @@
     }
 
     img {
-      width: 55%;
+      width: 70%;
     }
 
     .content h1{
@@ -36,6 +36,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 
     .login-btn {
       margin-right: 10px;

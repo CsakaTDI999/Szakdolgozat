@@ -46,13 +46,13 @@
   </nav>
     
   <div class="image-container" style="text-align: center;">
-  <a href="8l.php"><img src="audi8l.png" alt="8l" /></a><a style="font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);" href="8p.php"><img src="audi8p.png" alt="8p" /></a><a style="font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);" href="8v.php"><img src="audi8v.png" alt="8v" /></a></div>
+  <a href="8l.php"><img src="Képek/audi8l.png" alt="8l" /></a><a style="font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);" href="8p.php"><img src="Képek/audi8p.png" alt="8p" /></a><a style="font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);" href="8v.php"><img src="Képek/audi8v.png" alt="8v" /></a></div>
 <div class="image-container" style="text-align: center;"><a href="8l.php">8L (1996-2003)&nbsp; </a><a href="8p.php">8P (2003-2012)&nbsp; </a><a href="8v.php">8V (2012-)</a></div>
   
   <style>
   
   .image-container img {
-    width: 300px;
+    width: 400px;
     height: 300px;
     margin: 10px;
   }
