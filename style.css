@@ -70,6 +70,7 @@ position: to;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 10px;
   }
   
   .image-container img {
@@ -77,3 +78,24 @@ position: to;
     height: 300px;
     margin: 10px;
   }
+
+  .image-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-column {
+  flex: 20%;
+  padding: 10px;
+  
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+p {
+  text-align: center;
+}

@@ -46,11 +46,30 @@
   </nav>
     
  
-  <div class="auto-valaszt">
-    <img src="audi8l.png" alt="Kép 1">
-    <img src="audi8p.png" alt="Kép 2">
-    <img src="audi8v.png" alt="Kép 3">
+  <div class="image-container">
+  
+    <a href="8l.php"><img src="audi8l.png" alt="8l"></a>
+    <p>8L (1996-2003)</p>
+  
+  <div class="image-column">
+    <a href="8p.php"><img src="audi8p.png" alt="8p"></a>
+    <p>8P (2003-2012)</p>
+  <div class="image-column">
+    <a href="8v.php"><img src="audi8v.png" alt="8v"></a>
+    <p>8v (2012-)</p>
   </div>
+  <style>
+    .image-container {
+    justify-content: center;
+   
+  }
+  
+  .image-container img {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+  }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
   </html>
