@@ -19,6 +19,7 @@ position: to;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    
   }
   
   .registration-form h2 {
@@ -62,4 +63,17 @@ position: to;
   
   button[type="submit"]:hover {
     background-color: #0069d9;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .image-container img {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
   }

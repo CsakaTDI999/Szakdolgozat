@@ -8,6 +8,7 @@
     <title>TuneYourA3.hu</title>
 </head>
 <body>
+    
 <form method="post" action="register.php" class="registration-form">
   <h2>Regisztráció</h2>
 
@@ -32,6 +33,13 @@
   </div>
 
   <button type="submit" name="submit">Regisztráció</button>
+
+  <button onclick="Back()" name="back">Vissza</button>
+  <script>
+function Back() {
+  window.history.back();
+}
+</script>
 </form>
 </body>
 </html>
