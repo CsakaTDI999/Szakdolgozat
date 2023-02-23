@@ -45,24 +45,11 @@
     </div>
   </nav>
     
- 
-  <div class="image-container">
+  <div class="image-container" style="text-align: center;">
+  <a href="8l.php"><img src="audi8l.png" alt="8l" /></a><a style="font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);" href="8p.php"><img src="audi8p.png" alt="8p" /></a><a style="font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);" href="8v.php"><img src="audi8v.png" alt="8v" /></a></div>
+<div class="image-container" style="text-align: center;"><a href="8l.php">8L (1996-2003)&nbsp; </a><a href="8p.php">8P (2003-2012)&nbsp; </a><a href="8v.php">8V (2012-)</a></div>
   
-    <a href="8l.php"><img src="audi8l.png" alt="8l"></a>
-    <p>8L (1996-2003)</p>
-  
-  <div class="image-column">
-    <a href="8p.php"><img src="audi8p.png" alt="8p"></a>
-    <p>8P (2003-2012)</p>
-  <div class="image-column">
-    <a href="8v.php"><img src="audi8v.png" alt="8v"></a>
-    <p>8v (2012-)</p>
-  </div>
   <style>
-    .image-container {
-    justify-content: center;
-   
-  }
   
   .image-container img {
     width: 300px;

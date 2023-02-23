@@ -11,6 +11,8 @@
 </head>
 <body>
 
+
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php"><img src="logo.png" class="img-fluid"></a>
@@ -45,9 +47,59 @@
   </nav>
     
   <div class="8pcontainer">
-    <h3>8p:</h3>
-    <p>asdasd.</p>
+    <h3>Audi A3 8P(2003-2012):</h3>
+    <p>Kérem válassza ki a keresni kívánt alkatrészeket!</p>
   </div>
+ 
+  <div class="image-row">
+  <div class="image-column">
+    <a href="#"><img src="" alt="Kép 1"></a>
+    <p>Optika</p>
+  </div>
+  <div class="image-column">
+    <a href="#"><img src="" alt="Kép 2"></a>
+    <p>Motor</p>
+  </div>
+  <div class="image-column">
+    <a href="#"><img src="" alt="Kép 3"></a>
+    <p>Futómű</p>
+  </div>
+  <div class="image-column">
+    <a href="#"><img src="" alt="Kép 4"></a>
+    <p>Sportfék</p>
+  </div>
+  <div class="image-column">
+    <a href="#"><img src="" alt="Kép 5"></a>
+    <p>levegőszűrő</p>
+  </div>
+  <div class="image-column">
+    <a href="#"><img src="" alt="Kép 6"></a>
+    <p>Sportkipufogó</p>
+  </div>
+</div>
+<style>
+    .image-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-column {
+  flex: 20%;
+  padding: 10px;
+  
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+p {
+  text-align: center;
+}
+
+    </style>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
   </html>

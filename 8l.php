@@ -47,13 +47,13 @@
   </nav>
     
   <div class="8lcontainer">
-    <h3>8l:</h3>
-    <p>asdasd.</p>
+    <h3>Audi A3 8L (1996-2003):</h3>
+    <p>Kérem válassza ki a keresni kívánt alkatrészeket!</p>
   </div>
  
   <div class="image-row">
   <div class="image-column">
-    <a href="#"><img src="audi8p.png" alt="Kép 1"></a>
+    <a href="#"><img src="" alt="Kép 1"></a>
     <p>Optika</p>
   </div>
   <div class="image-column">
