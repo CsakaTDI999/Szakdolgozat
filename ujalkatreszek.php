@@ -45,17 +45,46 @@
     </div>
   </nav>
     
-  <div class="image-container" style="text-align: center;">
-  <a href="8l.php"><img src="Képek/audi8l.png" alt="8l" /></a><a style="font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);" href="8p.php"><img src="Képek/audi8p.png" alt="8p" /></a><a style="font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);" href="8v.php"><img src="Képek/audi8v.png" alt="8v" /></a></div>
-<div class="image-container" style="text-align: center;"><a href="8l.php">8L (1996-2003)&nbsp; </a><a href="8p.php">8P (2003-2012)&nbsp; </a><a href="8v.php">8V (2012-)</a></div>
   
+  
+<div class="image-container" style="text-align: center;">
+  <div>
+    <a href="8l.php"><img src="Képek/audi8l.png" alt="8l" /></a>
+    <p>A3 8L (1996-2003)</p>
+  </div>
+  <div>
+    <a href="8p.php"><img src="Képek/audi8p.png" alt="8p" /></a>
+    <p>A3 8P(2003-2012)</p>
+  </div>
+  <div>
+    <a href="8v.php"><img src="Képek/audi8v.png" alt="8v" /></a>
+    <p>A3 8V(2012-)</p>
+  </div>
+</div>
+
+
   <style>
-  
-  .image-container img {
-    width: 400px;
-    height: 300px;
-    margin: 10px;
+     body {
+    background-color: #343a40;
   }
+   .image-container div {
+    display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 33%;
+  margin: 10px;
+  }
+
+  .image-container img {
+    width: 50%;
+  height: auto;
+  }
+  
+  .image-container p {
+  color: white;
+  font-size: 1.8em;
+}
+
   </style>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

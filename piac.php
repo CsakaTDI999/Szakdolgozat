@@ -11,32 +11,7 @@
 </head>
 <body>
 
-<!--<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-  <a class="navbar-brand" href="/">
-      <div class="logo-image">
-            <img src="logo.png" class="img-fluid">
-      </div>
-</a>
-  
-  <div class="navbar-header">
-      <a class="navbar-brand" href="#" img>TuneYourA3.hu</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Alkatrészek <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Új</a></li>
-          <li><a href="#">Használt</a></li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Regisztráció</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Belépés</a></li>
-    </ul>
-  </div>
-</nav>-->
+
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">

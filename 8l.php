@@ -53,46 +53,46 @@
  
   <div class="image-row">
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 1"></a>
+    <a href="#"><img src="Képek/optika.png" alt="Kép 1"></a>
     <p>Optika</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 2"></a>
+    <a href="#"><img src="Képek/motor.png" alt="Kép 2"></a>
     <p>Motor</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 3"></a>
+    <a href="#"><img src="Képek/futomu.png" alt="Kép 3"></a>
     <p>Futómű</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 4"></a>
+    <a href="#"><img src="Képek/fek.png" alt="Kép 4"></a>
     <p>Sportfék</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 5"></a>
+    <a href="#"><img src="Képek/legszuro.png" alt="Kép 5"></a>
     <p>levegőszűrő</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 6"></a>
+    <a href="#"><img src="Képek/kipufogo.png" width="100px" height="100px" alt="Kép 6" ></a>
     <p>Sportkipufogó</p>
   </div>
 </div>
 <style>
-    .image-row {
+   .image-row {
   display: flex;
   flex-wrap: wrap;
 }
 
 .image-column {
   flex: 20%;
-  padding: 10px;
-  
+  text-align: center;
 }
 
 img {
   display: block;
-  width: 100%;
+  width: 50%;
   height: auto;
+  margin: 0 auto;
 }
 
 p {
