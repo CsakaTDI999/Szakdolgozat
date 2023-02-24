@@ -41,6 +41,7 @@ position: to;
   .form-group input[type="email"],
   .form-group input[type="phone"],
   .form-group input[type="password"] {
+    opacity: 0.7;
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -49,19 +50,11 @@ position: to;
     margin-left: -10px;
   }
   
-  button[type="submit"] {
-    display: block;
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
+  
+  
+  
   
   button[type="submit"]:hover {
-    background-color: #0069d9;
+    background-color: #DC3545;
   }
   

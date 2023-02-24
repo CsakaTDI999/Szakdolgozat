@@ -74,7 +74,7 @@
 
   <div class="d-flex justify-content-end align-items-center p-3">
     <a href="Belepes.php" class="btn btn-outline-light login-btn">Belépés</a>
-    <a href="regisztracio.php" class="btn btn-primary btn-danger">Regisztráció</a>
+    <a href="regisztracio.php" class="=>Regisztráció</a>
 
   </div>
 
