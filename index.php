@@ -8,14 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
   <style>
-    .content{
-      position: absolute;
-      top: calc(50% - 120px);
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      z-index: 1;
-    }
+    
+    
 
     img {
       width: 70%;
@@ -52,6 +46,33 @@
     
     }
 
+    .content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.condition-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  opacity: 0.80;
+}
+
+
+    .condition-text a {
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+}
+
   </style>
 </head>
 <body>
@@ -61,23 +82,21 @@
 
   <div class="content">
     <img src="logo.png" alt="logo"><br><br>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle btn-danger" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Termékek:
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="ujalkatreszek.php">Új</a></li>
-        <li><a class="dropdown-item" href="piac.php">Használt</a></li>
-      </ul>
+
+    <div class="condition-text">
+      <a href="ujalkatreszek.php" class="btn btn-danger">Új alkatrészek</a>
+      <a href="piac.php" class="btn btn-danger">Használt alkatrészek</a>
     </div>
   </div>
 
   <div class="d-flex justify-content-end align-items-center p-3">
     <a href="Belepes.php" class="btn btn-outline-light login-btn">Belépés</a>
-    <a href="regisztracio.php" class="=>Regisztráció</a>
+    <a href="regisztracio.php" class="btn btn-primary btn-danger">Regisztráció</a>
 
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk
+
+
 </body>
 </html>
