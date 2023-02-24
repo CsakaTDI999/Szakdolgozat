@@ -8,7 +8,11 @@
     <title>TuneYourA3.hu</title>
 </head>
 <body>
-    
+
+<video autoplay loop muted plays-inline class="indexvideo">
+  <source src="indexvideo.mp4" type="video/mp4">
+</video>
+
 <form method="post" action="register.php" class="registration-form">
   <h2>Regisztráció</h2>
 
@@ -40,6 +44,27 @@ function Back() {
   window.history.back();
 }
 </script>
+<style>
+  
+  .indexvideo{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-aspect-ratio:16/9){
+      .indexvideo{
+        width: auto;
+        height: 100%;
+      }
+    
+    }
+    
+  </style>
 </form>
 </body>
 </html>

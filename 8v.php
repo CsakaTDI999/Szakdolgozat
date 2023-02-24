@@ -53,52 +53,62 @@
  
   <div class="image-row">
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 1"></a>
+    <a href="#"><img src="Képek/optika.png" alt="Kép 1"></a>
     <p>Optika</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 2"></a>
+    <a href="#"><img src="Képek/motor.png" alt="Kép 2"></a>
     <p>Motor</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 3"></a>
+    <a href="#"><img src="Képek/futomu.png" alt="Kép 3"></a>
     <p>Futómű</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 4"></a>
+    <a href="#"><img src="Képek/fek.png" alt="Kép 4"></a>
     <p>Sportfék</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 5"></a>
+    <a href="#"><img src="Képek/legszuro.png" alt="Kép 5"></a>
     <p>levegőszűrő</p>
   </div>
   <div class="image-column">
-    <a href="#"><img src="" alt="Kép 6"></a>
+    <a href="#"><img src="Képek/kipufogo.png" width="100px" height="100px" alt="Kép 6" ></a>
     <p>Sportkipufogó</p>
   </div>
 </div>
 <style>
-    .image-row {
+
+body {
+  background-color: #343a40;
+  color: white;
+}
+
+   .image-row {
   display: flex;
   flex-wrap: wrap;
 }
 
 .image-column {
-  flex: 20%;
-  padding: 10px;
-  
+  flex: 10%;
+  text-align: center;
 }
 
 img {
   display: block;
-  width: 100%;
+  width: 50%;
   height: auto;
+  margin: 0 auto;
 }
 
 p {
   text-align: center;
+  font-size: 25px;
 }
 
+h3 {
+    font-size: 40px;
+}
     </style>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
