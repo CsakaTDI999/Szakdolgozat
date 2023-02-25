@@ -12,10 +12,10 @@ if ($conn->connect_error) {
   die("Kapcsolódási hiba: " . $conn->connect_error);
 }
 
-$name = $_POST["felhasznalonev"];
+$name = $_POST["name"];
 $email = $_POST["email"];
-$phone = $_POST["telefonszam"];
-$password = $_POST["jelszo"];
+$phone = $_POST["phone"];
+$password = $_POST["password"];
 
 $sql = "INSERT INTO felhasznalo (felhasznalonev, email, telefonszam, jelszo)
 VALUES ('$name', '$email', '$phone', '$password')";
