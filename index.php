@@ -61,7 +61,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  opacity: 0.80;
+  opacity: 0.85;
 }
 
 

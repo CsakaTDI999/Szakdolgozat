@@ -14,7 +14,7 @@
   <source src="indexvideo.mp4" type="video/mp4">
 </video>
 
-<form method="post" action="register.php" class="registration-form">
+<form method="post" action="db_connect.php" class="registration-form">
   <h2>Regisztráció</h2>
 
   <div class="form-group">
