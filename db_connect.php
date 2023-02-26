@@ -21,7 +21,7 @@ $sql = "INSERT INTO felhasznalo (felhasznalonev, email, telefonszam, jelszo)
 VALUES ('$name', '$email', '$phone', '$password')";
 
 if (mysqli_query($conn, $sql)) {
-  echo "Sikeres regisztráció";
+  echo "Sikeres regisztráció!";
 } else {
   echo "Hiba: " . $sql . "<br>" . mysqli_error($conn);
 }
