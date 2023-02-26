@@ -11,7 +11,7 @@
   <source src="indexvideo.mp4" type="video/mp4">
 </video>
 
-<form method="post" action="register.php" class="registration-form">
+<form method="post" action="index.php" class="registration-form" onsubmit="return validateForm()">
   <h2>Bejelentkezés:</h2>
 
   <div class="form-group">
@@ -81,6 +81,40 @@ function Back() {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
     </style>
+
+<?php
+
+$servername = "localhost";
+$username = "Admin";
+$password = "ILw3dA93(yhGs*GG";
+$dbname = "szakdolgozat";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Kapcsolódási hiba: " . $conn->connect_error);
+}
+
+if (isset($_POST["submit"])) {
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+
+  $sql = "SELECT * FROM felhasznalo WHERE email = '$email' AND jelszo = '$password'";
+
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    echo "Sikeres belépés!";
+  } else {
+    echo "Sikertelen belépés!";
+  }
+}
+
+$conn->close();
+
+?>
+
+
 </form>
 </body>
 </html>
