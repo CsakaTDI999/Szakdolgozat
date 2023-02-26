@@ -17,8 +17,11 @@ $email = $_POST["email"];
 $phone = $_POST["phone"];
 $password = $_POST["password"];
 
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+//password_verify() t kell majdhasználni a login nal
+
 $sql = "INSERT INTO felhasznalo (felhasznalonev, email, telefonszam, jelszo)
-VALUES ('$name', '$email', '$phone', '$password')";
+VALUES ('$name', '$email', '$phone', '$hashed_password')";
 
 if (mysqli_query($conn, $sql)) {
   echo "Sikeres regisztráció!";

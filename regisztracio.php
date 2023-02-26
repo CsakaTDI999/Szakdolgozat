@@ -86,6 +86,12 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
    
     }
+
+    #success-message {
+  color: #DC3545;
+  font-size: 150%;
+}
+
     
   </style>
 
@@ -104,6 +110,7 @@ function submitForm() {
     success: function(response) {
       $("#success-message").show();
     }
+    
   });
 }
 
