@@ -11,6 +11,14 @@
   <source src="indexvideo.mp4" type="video/mp4">
 </video>
 
+<?php
+if(isset($_GET['hiba']))
+{
+  echo "<div class= 'success-message text-center bg-danger'> Hibás adatokat adtál meg! </div>";
+}
+
+?>
+
 <form method="post" action="index.php" name="loginform" class="registration-form">
   <h2>Bejelentkezés:</h2>
 
@@ -80,6 +88,12 @@ function Back() {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
+
+    #success-message {
+  color: #DC3545;
+  font-size: 150%;
+    }
+
     </style>
 
 <?php

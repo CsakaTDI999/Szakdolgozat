@@ -112,25 +112,42 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 <?php
-session_start()
-if (isset($_SESSION["felhasznalo"])) {
+session_start();
 
+ if (isset($_SESSION['felhasznalo'])) {
+echo "Sikeres belépés!";
  
 }
-else {
-  if(!isset($_post['login']))}
+else
+ {
+  if(!isset($_post['login']))
 {
-require_once("Belepes.php")
-
+require_once("Belepes.php");
+}
 else
 {
 require_once("kapcsolat.php");
 $email = $_POST['email'];
 $password = $_POST['password'];
 $sql = "SELECT FROM felhasznalo WHERE (email = '$email' AND jelszo ='$password')"; 
+$lekerdez = $kapcsolat->query($sql);
+$mennyi = mysqli_num_rows($lekerdez); //0 nincs 1 van
+if($mennyi == 0)
+{
+  header('location: index.php?hiba=1');
+}
+else
+{
+  $_SESSION['felhasznalo'] = $email;
+header('location: index.php');
+}
+
+
 
 }
 }
+
+
 
 
 
