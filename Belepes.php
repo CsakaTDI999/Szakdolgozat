@@ -11,7 +11,7 @@
   <source src="indexvideo.mp4" type="video/mp4">
 </video>
 
-<form method="post" action="index.php" class="registration-form" onsubmit="return validateForm()">
+<form method="post" action="index.php" name="loginform" class="registration-form">
   <h2>Bejelentkezés:</h2>
 
   <div class="form-group">
@@ -24,7 +24,7 @@
     <input type="password" name="password" required>
   </div>
 
-  <button type="submit" name="submit" class="btn btn-primary btn-danger">Belépés</button>
+  <button type="submit" name="login" class="btn btn-primary btn-danger">Belépés</button>
   
   <button onclick="Back()" name="back" class="btn btn-primary btn-danger">Vissza</button>
   <script>
@@ -84,33 +84,6 @@ function Back() {
 
 <?php
 
-$servername = "localhost";
-$username = "Admin";
-$password = "ILw3dA93(yhGs*GG";
-$dbname = "szakdolgozat";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Kapcsolódási hiba: " . $conn->connect_error);
-}
-
-if (isset($_POST["submit"])) {
-  $email = $_POST["email"];
-  $password = $_POST["password"];
-
-  $sql = "SELECT * FROM felhasznalo WHERE email = '$email' AND jelszo = '$password'";
-
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0) {
-    echo "Sikeres belépés!";
-  } else {
-    echo "Sikertelen belépés!";
-  }
-}
-
-$conn->close();
 
 ?>
 

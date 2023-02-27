@@ -71,6 +71,18 @@
   margin-bottom: 10px;
   color: white;
   text-decoration: none;
+
+}
+
+.user-info {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
+.user-info a {
+  color: #DC3545;
+  margin-left: 10px;
 }
 
   </style>
@@ -89,14 +101,42 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-end align-items-center p-3">
+ <div class="d-flex justify-content-end align-items-center p-3">
+    
     <a href="Belepes.php" class="btn btn-outline-light login-btn">Belépés</a>
     <a href="regisztracio.php" class="btn btn-primary btn-danger">Regisztráció</a>
 
   </div>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk
+<?php
+session_start()
+if (isset($_SESSION["felhasznalo"])) {
 
+ 
+}
+else {
+  if(!isset($_post['login']))}
+{
+require_once("Belepes.php")
+
+else
+{
+require_once("kapcsolat.php");
+$email = $_POST['email'];
+$password = $_POST['password'];
+$sql = "SELECT FROM felhasznalo WHERE (email = '$email' AND jelszo ='$password')"; 
+
+}
+}
+
+
+
+  
+
+?>
 
 </body>
 </html>
