@@ -48,7 +48,7 @@
     </div>
   </nav>
   <div class="container">
-		<h2>Alkatrész felvétele</h2>
+		<h2>Alkatrész felvétele:</h2>
 		<form action="alkatresz_felvetel.php" method="POST" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="nev">Alkatrész neve:</label>
@@ -58,20 +58,23 @@
 				<label for="evjarat">Alkatrész évjárata:</label>
 				<input type="number" class="form-control" id="evjarat" name="evjarat" required>
 			</div>
-			<div class="form-group">
-				<label for="tipus">Alkatrész típusa:</label>
-				<input type="text" class="form-control" id="tipus" name="tipus" required>
-			</div>
-
-            <div class="form-group">
-				<label for="tmarka">Alkatrész márkája:</label>
-				<input type="text" class="form-control" id="marka" name="marka" required>
-			</div>
 			
 			<div class="form-group">
-				<label for="kep">Fénykép:</label>
-				<input type="file" class="form-control-file" id="kep" name="kep" required>
+				<label for="leiras">leírása:</label>
+				<input type="text" class="form-control" id="leiras" name="leiras" required>
 			</div>
+           
+            <div class="form-group">
+				<label for="hely">Lakhely:</label>
+				<input type="text" class="form-control" id="hely" name="hely" required>
+			</div>
+           
+            <label for="kep">Fénykép:</label>
+				<input type="file" class="form-control-file" id="kep" name="kep">
+
+            
+			
+
 			<button type="submit" class="btn btn-primary">Felvétel</button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
