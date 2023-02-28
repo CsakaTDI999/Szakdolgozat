@@ -12,12 +12,51 @@
 </video>
 
 <?php
-if(isset($_GET['hiba']))
-{
-  echo "<div class= 'success-message text-center bg-danger'> Hibás adatokat adtál meg! </div>";
+
+
+// adatbázis kapcsolódás
+$servername = "localhost";
+$username = "Admin";
+$password = "ILw3dA93(yhGs*GG";
+$dbname = "szakdolgozat";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// ellenőrizzük a kapcsolatot
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-?>
+// form elküldésekor
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // email és jelszó ellenőrzése
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // ellenőrizzük, hogy a felhasználói email és jelszó helyes-e
+    $sql = "SELECT * FROM felhasznalo WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row['password'])) {
+            // sikeres bejelentkezés, tároljuk a felhasználói adatokat a session-ban
+            session_start();
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
+            header('Location: index.php');
+            exit;
+        } else {
+            $error = "Hibás email vagy jelszó!";
+        }
+    } else {
+        $error = "Hibás email vagy jelszó!";
+    }
+}
+
+ ?>
+
 
 <form method="post" action="index.php" name="loginform" class="registration-form">
   <h2>Bejelentkezés:</h2>
@@ -95,11 +134,6 @@ function Back() {
     }
 
     </style>
-
-<?php
-
-
-?>
 
 
 </form>

@@ -12,6 +12,6 @@ if (!$kapcsolat) {
   die('Kapcsolódási hiba:  '.mysqli_connenct_errno().' '.mysqli_connect_error());
 }
 
-mysqli_query($kapcsolat,"SET NAMES 'UTF8'")
-mysqli_query($kapcsolat,"SET CHARACTER SET UTF8")
+mysqli_query($kapcsolat,"SET NAMES 'UTF8'");
+mysqli_query($kapcsolat,"SET CHARACTER SET UTF8");
 ?>
