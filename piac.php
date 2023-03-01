@@ -48,10 +48,46 @@
       </div>
     </div>
   </nav>
-    
+  
+  <?php
+// Adatbázis kapcsolat létrehozása
+$servername = "localhost";
+$username = "Admin";
+$password = "ILw3dA93(yhGs*GG";
+$dbname = "szakdolgozat";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Hibaellenőrzés
+if (!$conn) {
+    die("Nem sikerült csatlakozni: " . mysqli_connect_error());
+}
+
+// Lekérdezés végrehajtása
+$sql = "SELECT ID, nev, leiras, hely, evjarat, kep FROM h_alkatresz";
+$result = mysqli_query($conn, $sql);
+
+// Eredmény feldolgozása
+
+if (mysqli_num_rows($result) > 0) {
+  $row = mysqli_fetch_assoc($result);
+  $ID = $row["ID"];
+  $nev = $row["nev"];
+  $leiras = $row["leiras"];
+  $hely = $row["hely"];
+  $evjarat = $row["evjarat"];
+  $kep = imagecreatefromstring($row["kep"]);
+} else {
+  echo "Nincs találat.";
+}
+
+// Adatbázis kapcsolat bezárása
+mysqli_close($conn);
+?>
+
   <div class="container">
   <div class="card">
-  <img src="<?php echo $kep ?>" class="card-img-top" alt="<?php echo $nev ?>">
+  <img src="<?php echo $kep ?>" class="card-img-top">
   <div class="card-body">
     <h5 class="card-title"><?php echo $nev ?></h5>
     <p class="card-text"><?php echo $leiras ?></p>

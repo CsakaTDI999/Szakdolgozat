@@ -13,7 +13,6 @@
 
 <?php
 
-
 // adatbázis kapcsolódás
 $servername = "localhost";
 $username = "Admin";
@@ -39,24 +38,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        if (password_verify($password, $row['password'])) {
+        if (password_verify($password, $row['jelszo'])) {
             // sikeres bejelentkezés, tároljuk a felhasználói adatokat a session-ban
             session_start();
-            $_SESSION['user_id'] = $row['id'];
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['ID'] = $row['ID'];
+            $_SESSION['felhasznalo'] = $row['felhasznalo'];
             $_SESSION['email'] = $row['email'];
-            header('Location: index.php');
-            exit;
+            $success = "Sikeres bejelentkezés!";
         } else {
             $error = "Hibás email vagy jelszó!";
         }
-    } else {
-        $error = "Hibás email vagy jelszó!";
-    }
+      } 
 }
 
- ?>
-
+?>
 
 <form method="post" action="index.php" name="loginform" class="registration-form">
   <h2>Bejelentkezés:</h2>

@@ -24,9 +24,9 @@ $sql = "INSERT INTO h_alkatresz (nev, evjarat, leiras, hely, kep)
 VALUES ('$nev', '$evjarat', '$leiras', '$hely', '$imgContent')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Az alkatrész sikeresen fel lett véve az adatbázisba.";
+  echo "Sikeres feltöltés!";
 } else {
-  echo "Hiba történt az adatbázisba való feltöltéskor: " . $conn->error;
+  echo "Hiba!: " . $conn->error;
 }
 
 
