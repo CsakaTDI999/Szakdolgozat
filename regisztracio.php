@@ -44,7 +44,7 @@
   <button type="button" name="submit" class="btn btn-primary btn-danger" onclick="submitForm()">Regisztráció</button>
 
 
-  <button onclick="Back()" name="back" class="btn btn-primary btn-danger">Vissza</button>
+  <button href="index.php" name="back" class="btn btn-primary btn-danger">Vissza</button>
   
 <style>
 
@@ -96,10 +96,6 @@
   </style>
 
 <script>
-
-function Back() {
-  window.history.back();
-}
 
 function submitForm() {
   var form_data = $("#reg-form").serialize();

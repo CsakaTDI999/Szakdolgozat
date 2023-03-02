@@ -14,56 +14,51 @@
 
 <?php
 
+
 require_once 'kapcsolat.php';
 
-// form elküldésekor
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // email és jelszó ellenőrzése
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $jelszo = $_POST['password'];
 
-    // ellenőrizzük, hogy a felhasználói email és jelszó helyes-e
     $sql = "SELECT * FROM felhasznalo WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        if (password_verify($password, $row['jelszo'])) {
-            // sikeres bejelentkezés, tároljuk a felhasználói adatokat a session-ban
-            session_start();
-            $_SESSION['ID'] = $row['ID'];
-            $_SESSION['felhasznalo'] = $row['felhasznalo'];
-            $_SESSION['email'] = $row['email'];
-            $success = "Sikeres bejelentkezés!";
-        } else {
-            $error = "Hibás email vagy jelszó!";
-        }
-      } 
+    $row = mysqli_fetch_assoc($result);
+    if (password_verify($jelszo, $row['jelszo'])) {
+        $_SESSION['ID'] = $row['ID'];
+        $_SESSION['felhasznalonev'] = $row['felhasznalonev'];
+        $_SESSION['email'] = $row['email'];
+        $success = "Sikeres bejelentkezés!";
+        header("Location: index.php"); 
+        exit(); 
+    } else {
+      echo "<script>alert('Hibás email vagy jelszó!');</script>";
+    }
+}
 }
 
 ?>
 
-<form method="post" action="index.php" name="loginform" class="registration-form">
+<form method="post" action="Belepes.php" name="loginform" class="registration-form">
   <h2>Bejelentkezés:</h2>
 
   <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" name="email" required>
+  <label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+
   </div>
 
   <div class="form-group">
-    <label for="password">Jelszó:</label>
-    <input type="password" name="password" required>
+  <label for="password">Jelszó:</label>
+<input type="password" id="password" name="password" required>
   </div>
 
   <button type="submit" name="login" class="btn btn-primary btn-danger">Belépés</button>
   
-  <button onclick="Back()" name="back" class="btn btn-primary btn-danger">Vissza</button>
-  <script>
-function Back() {
-  window.history.back();
-}
-</script>
+  <button href="index.php" name="back" class="btn btn-primary btn-danger">Vissza</button>
+  
 <style>
   
   .content{

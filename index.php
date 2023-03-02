@@ -1,5 +1,14 @@
 <?php
-session_start();
+// Ellenőrizzük, hogy a felhasználó be van-e jelentkezve
+if (isset($_SESSION['ID'])) {
+  // Ha igen, akkor megjelenítjük a kilépés gombot
+  echo '<form method="post" action="kijelentkezes.php"><button type="submit" name="logout" class="btn btn-primary btn-danger">Kijelentkezés</button></form>';
+} else {
+  // Ha nem, akkor megjelenítjük a belépés és a regisztráció gombokat
+  echo '<a href="Belepes.php" class="btn btn-primary btn-danger">Belépés</a>';
+  echo '<a href="regisztracio.php" class="btn btn-primary btn-danger">Regisztráció</a>';
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -105,12 +114,7 @@ session_start();
     </div>
   </div>
 
- <div class="d-flex justify-content-end align-items-center p-3">
-    
-    <a href="Belepes.php" class="btn btn-outline-light login-btn">Belépés</a>
-    <a href="regisztracio.php" class="btn btn-primary btn-danger">Regisztráció</a>
-
-  </div>
+ 
   
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
