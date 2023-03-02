@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<title>TuneYourA3.hu</title>
@@ -13,18 +14,7 @@
 
 <?php
 
-// adatbázis kapcsolódás
-$servername = "localhost";
-$username = "Admin";
-$password = "ILw3dA93(yhGs*GG";
-$dbname = "szakdolgozat";
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// ellenőrizzük a kapcsolatot
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+require_once 'kapcsolat.php';
 
 // form elküldésekor
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

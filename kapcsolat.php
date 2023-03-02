@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "Admin";
-$password = "ILw3dA93(yhGs*GG";
-$dbname = "szakdolgozat";
+$username = "c31bujdosdbu";
+$password = "ctcs!JRP5W8:";
+$dbname = "c31bujdosdb";
 
 $kapcsolat = mysqli_connect($servername,$username,$password,$dbname);
 

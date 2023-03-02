@@ -103,17 +103,23 @@ function Back() {
 
 function submitForm() {
   var form_data = $("#reg-form").serialize();
+
   $.ajax({
     type: "POST",
     url: "db_connect.php",
     data: form_data,
     success: function(response) {
-      $("#success-message").show();
+      if (response === "Sikeres regisztráció!") {
+        $("#success-message").show();
+      } else {
+        alert("Hiba: " + response);
+      }
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      alert("Hiba: " + errorThrown);
     }
-    
   });
 }
-
 
 </script>
 </form>

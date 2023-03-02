@@ -50,24 +50,21 @@
   </nav>
   
   <?php
-// Adatbázis kapcsolat létrehozása
 $servername = "localhost";
-$username = "Admin";
-$password = "ILw3dA93(yhGs*GG";
-$dbname = "szakdolgozat";
+$username = "c31bujdosdbu";
+$password = "ctcs!JRP5W8:";
+$dbname = "c31bujdosdb";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername,$username,$password,$dbname);
 
-// Hibaellenőrzés
+
 if (!$conn) {
-    die("Nem sikerült csatlakozni: " . mysqli_connect_error());
+  die('Kapcsolódási hiba:  '.mysqli_connenct_errno().' '.mysqli_connect_error());
 }
 
-// Lekérdezés végrehajtása
 $sql = "SELECT ID, nev, leiras, hely, evjarat, kep FROM h_alkatresz";
 $result = mysqli_query($conn, $sql);
 
-// Eredmény feldolgozása
 
 if (mysqli_num_rows($result) > 0) {
   $row = mysqli_fetch_assoc($result);
@@ -76,12 +73,12 @@ if (mysqli_num_rows($result) > 0) {
   $leiras = $row["leiras"];
   $hely = $row["hely"];
   $evjarat = $row["evjarat"];
-  $kep = imagecreatefromstring($row["kep"]);
+  $kep = $row["kep"];
 } else {
   echo "Nincs találat.";
 }
 
-// Adatbázis kapcsolat bezárása
+
 mysqli_close($conn);
 ?>
 
