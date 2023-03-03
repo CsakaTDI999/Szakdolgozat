@@ -1,15 +1,24 @@
 <?php
-// Ellenőrizzük, hogy a felhasználó be van-e jelentkezve
-if (isset($_SESSION['ID'])) {
-  // Ha igen, akkor megjelenítjük a kilépés gombot
-  echo '<form method="post" action="kijelentkezes.php"><button type="submit" name="logout" class="btn btn-primary btn-danger">Kijelentkezés</button></form>';
-} else {
-  // Ha nem, akkor megjelenítjük a belépés és a regisztráció gombokat
-  echo '<a href="Belepes.php" class="btn btn-primary btn-danger">Belépés</a>';
-  echo '<a href="regisztracio.php" class="btn btn-primary btn-danger">Regisztráció</a>';
+session_start();
 
+if (isset($_SESSION['ID'])) {
+  // a felhasználónév beállítása a $_SESSION tömbből
+  $felhasznalonev = $_SESSION['felhasznalonev'];
 }
+
+if (isset($felhasznalonev)) {
+  // a felhasználónév megjelenítése, ha be van jelentkezve
+  echo '<div class="user-info">' . $felhasznalonev . '</div>';
+  echo '<form method="post" action="kijelentkezes.php"><button type="submit" name="logout" class="btn btn-primary btn-danger login-btn">Kijelentkezés</button></form>';
+} else {
+  // a belépés és regisztráció gombok megjelenítése, ha nincs bejelentkezve
+  echo '<a href="Belepes.php" class="btn btn-primary btn-danger login-btn">Belépés</a>';
+  echo '<a href="regisztracio.php" class="btn btn-primary btn-danger ">Regisztráció</a>';
+}
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -44,12 +53,7 @@ if (isset($_SESSION['ID'])) {
 }
 
 
-    .login-btn {
-      margin-right: 10px;
-      margin-right: 10px;
-      border-color: red;
-    }
-
+   
     @media (max-aspect-ratio:16/9){
       .indexvideo{
         width: auto;
@@ -86,16 +90,24 @@ if (isset($_SESSION['ID'])) {
 
 }
 
+.login-btn {
+  position: absolute;
+  top: 10px;
+  right: 120px; 
+  margin-right: 10px;
+  margin-right: 10px;
+  border-color: red;
+}
+
 .user-info {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 150px; 
   color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px #000;
 }
-.user-info a {
-  color: #DC3545;
-  margin-left: 10px;
-}
+
 
   </style>
 </head>
