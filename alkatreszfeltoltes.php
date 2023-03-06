@@ -36,14 +36,7 @@
               </ul>
               </li>
           </ul>
-          <ul class="navbar-nav me-0 mb-2 mb-lg-0">
-              <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="regisztracio.php">Regisztráció</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="Belepes.php">Belépés</a>
-              </li>
-          </ul>
+          
       </div>
     </div>
   </nav>

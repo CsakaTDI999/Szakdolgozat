@@ -2,16 +2,13 @@
 session_start();
 
 if (isset($_SESSION['ID'])) {
-  // a felhasználónév beállítása a $_SESSION tömbből
   $felhasznalonev = $_SESSION['felhasznalonev'];
 }
 
 if (isset($felhasznalonev)) {
-  // a felhasználónév megjelenítése, ha be van jelentkezve
   echo '<div class="user-info">' . $felhasznalonev . '</div>';
   echo '<form method="post" action="kijelentkezes.php"><button type="submit" name="logout" class="btn btn-primary btn-danger login-btn">Kijelentkezés</button></form>';
 } else {
-  // a belépés és regisztráció gombok megjelenítése, ha nincs bejelentkezve
   echo '<a href="Belepes.php" class="btn btn-primary btn-danger login-btn">Belépés</a>';
   echo '<a href="regisztracio.php" class="btn btn-primary btn-danger ">Regisztráció</a>';
 }
