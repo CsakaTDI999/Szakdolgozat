@@ -1,21 +1,3 @@
-<?php
-session_start();
-
-if (isset($_SESSION['ID'])) {
-  $felhasznalonev = $_SESSION['felhasznalonev'];
-}
-
-if (isset($felhasznalonev)) {
-  echo '<div class="user-info">' . $felhasznalonev . '</div>';
-  echo '<form method="post" action="kijelentkezes.php"><button type="submit" name="logout" class="btn btn-primary btn-danger login-btn">Kijelentkezés</button></form>';
-} else {
-  echo '<a href="Belepes.php" class="btn btn-primary btn-danger login-btn">Belépés</a>';
-  echo '<a href="regisztracio.php" class="btn btn-primary btn-danger ">Regisztráció</a>';
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -113,6 +95,23 @@ if (isset($felhasznalonev)) {
     <source src="indexvideo.mp4" type="video/mp4">
   </video>
   
+  <?php
+session_start();
+
+if (isset($_SESSION['ID'])) {
+  $felhasznalonev = $_SESSION['felhasznalonev'];
+}
+
+if (isset($felhasznalonev)) {
+  echo '<span class="user-info">Üdv, ' . $felhasznalonev . '</span>';
+  echo '<a href="profil.php" class="btn btn-primary btn-danger mx-2">Profilom</a>';
+  echo '<form method="post" action="kijelentkezes.php"><button type="submit" name="logout" class="btn btn-primary btn-danger login-btn">Kijelentkezés</button></form>';
+} else {
+  echo '<a href="Belepes.php" class="btn btn-primary btn-danger login-btn">Belépés</a>';
+  echo '<a href="regisztracio.php" class="btn btn-primary btn-danger mx-2">Regisztráció</a>';
+}
+?>
+
   
   <div class="content">
     <img src="logo.png" alt="logo"><br><br>
