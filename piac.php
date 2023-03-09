@@ -36,7 +36,7 @@
           </ul>
           <ul class="navbar-nav me-0 mb-2 mb-lg-0">
           <?php
-  session_start();
+ require_once('kapcsolat.php');
 
   if (isset($_SESSION['felhasznalonev'])) {
     echo '<li class="nav-item"><a class="nav-link" aria-current="page" href="alkatreszfeltoltes.php">Hirdetésfeladás</a></li>';
@@ -55,21 +55,11 @@
   </nav>
   
   <?php
-
-$servername = "localhost";
-$username = "c31bujdosdbu";
-$password = "ctcs!JRP5W8:";
-$dbname = "c31bujdosdb";
-
-$conn = mysqli_connect($servername,$username,$password,$dbname);
-
-
-if (!$conn) {
-  die('Kapcsolódási hiba:  '.mysqli_connenct_errno().' '.mysqli_connect_error());
-}
+ require_once('kapcsolat.php');
 
 $sql = "SELECT ID, nev, leiras, hely, evjarat, kep FROM h_alkatresz";
 $result = mysqli_query($conn, $sql);
+
 
 
 if (mysqli_num_rows($result) > 0) {
@@ -88,17 +78,27 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 ?>
 
-  <div class="container">
-  <div class="card">
-  <img src="<?php echo $kep ?>" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title"><?php echo $nev ?></h5>
-    <p class="card-text"><?php echo $leiras ?></p>
-    <p class="card-text"><small class="text-muted"><?php echo $hely ?> - <?php echo $evjarat ?></small></p>
-  </div>
+<div class="container">
+  <?php while ($row = mysqli_fetch_assoc($result)): ?>
+    <div class="card mb-3">
+      <img src="<?php echo $row['kep']; ?>" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $row['nev']; ?></h5>
+        <p class="card-text"><?php echo $row['leiras']; ?></p>
+        <p class="card-text"><small class="text-muted"><?php echo $row['hely']; ?> - <?php echo $row['evjarat']; ?></small></p>
+      </div>
+    </div>
+  <?php endwhile; ?>
 </div>
 
-  </div>
+<style>
+  .card {
+  margin-bottom: 20px;
+}
+
+
+  </style>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>

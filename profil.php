@@ -80,7 +80,8 @@ if (isset($_POST['submit'])) {
                 <img src="uploads/<?php echo $row['profilkep']; ?>" class="img-fluid mt-3" alt="Profilkep">
                 <?php endif; ?>
               </div>
-              <button type="submit" class="btn btn-primary">Mentés</button>
+              <button type="submit" class="btn btn-primary btn-danger">Mentés</button>
+              <a class="btn btn-primary btn-danger" href="index.php">Vissza</a>
             </form>
           </div>
         </div>
