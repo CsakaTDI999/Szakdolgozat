@@ -24,27 +24,21 @@ if (isset($_POST['submit'])) {
     $row['felhasznalonev'] = $newUsername;
   }
   
-  if (!empty($newProfilePicture)) {
-    $stmt = $conn->prepare('UPDATE felhasznalo SET profilkep = ? WHERE ID = ?');
-    $stmt->bind_param('si', $newProfilePicture, $_SESSION['ID']);
-    $stmt->execute();
-    $row['profilkep'] = $newProfilePicture;
+  
   }
-
-  if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
-    $stmt = $conn->prepare('UPDATE felhasznalo SET felhasznalonev = ?, profilkep = ? WHERE ID = ?');
-    $stmt->bind_param('ssi', $newUsername, $newProfilePicture, $_SESSION['ID']);
-    $stmt->execute();
-    $row['felhasznalonev'] = $newUsername;
-    $row['profilkep'] = $newProfilePicture;
-  } else {
-    $stmt = $conn->prepare('UPDATE felhasznalo SET felhasznalonev = ? WHERE ID = ?');
-    $stmt->bind_param('si', $newUsername, $_SESSION['ID']);
-    $stmt->execute();
-    $row['felhasznalonev'] = $newUsername;
+    if (!empty($_FILES['profile_picture']['name'])) {
+    $fileName = basename($_FILES['profile_picture']['name']);
+    $targetFile = $uploadPath . $fileName;
+  
+    if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
+      $stmt = $conn->prepare('UPDATE felhasznalo SET profilkep = ? WHERE ID = ?');
+      $stmt->bind_param('si', $fileName, $_SESSION['ID']);
+      $stmt->execute();
+      $row['profilkep'] = $fileName;
+    }
   }
-}  
-
+  
+  
 ?>
 
 
@@ -78,10 +72,9 @@ if (isset($_POST['submit'])) {
                 <input type="text" class="form-control" id="username" name="username" value="<?php echo $row['felhasznalonev']; ?>">
               </div>
               <div class="form-group mb-3">
-                <label for="profile_picture">Profilkép</label>
-                <input type="file" class="form-control" id="profile_picture" name="profile_picture">
-
-              </div>
+              <label for="profile_picture">Profilkép</label>
+              <input type="file" class="form-control" id="profile_picture" name="profile_picture">
+                  </div>
               <button type="submit" class="btn btn-primary btn-danger">Mentés</button>
               <a class="btn btn-primary btn-danger" href="index.php">Vissza</a>
             </form>

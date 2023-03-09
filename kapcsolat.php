@@ -7,6 +7,7 @@ $password = "ctcs!JRP5W8:";
 $dbname = "c31bujdosdb";
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);
+$uploadPath = 'uploads/';
 
 
 if (!$conn) {
