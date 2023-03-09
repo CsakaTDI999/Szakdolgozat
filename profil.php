@@ -66,7 +66,11 @@ if (isset($_POST['submit'])) {
           <div class="card-body">
             <h1 class="card-title text-center mb-4">Profilom</h1>
             <div class="d-flex justify-content-center mb-3">
-              <div class="profile-image" style="background-image: url('uploads/<?php echo isset($row['profilkep']) && $row['profilkep'] ? $row['profilkep'] : 'nincsprofilkep.png'; ?>');"></div>
+                <?php if (isset($row['profilkep']) && $row['profilkep']): ?>
+                <img src="uploads/<?php echo $row['profilkep']; ?>" class="profile-image" alt="Profilkep">
+                  <?php else: ?>
+                    <img src="nincsprofilkep.png" class="profile-image" alt="Profilkep">
+                    <?php endif; ?>
             </div>
             <form method="POST" action="profil.php" enctype="multipart/form-data">
               <div class="form-group mb-3">
@@ -76,9 +80,7 @@ if (isset($_POST['submit'])) {
               <div class="form-group mb-3">
                 <label for="profile_picture">Profilkép</label>
                 <input type="file" class="form-control" id="profile_picture" name="profile_picture">
-                <?php if (isset($row['profilkep']) && $row['profilkep']): ?>
-                <img src="uploads/<?php echo $row['profilkep']; ?>" class="img-fluid mt-3" alt="Profilkep">
-                <?php endif; ?>
+
               </div>
               <button type="submit" class="btn btn-primary btn-danger">Mentés</button>
               <a class="btn btn-primary btn-danger" href="index.php">Vissza</a>
@@ -110,7 +112,6 @@ if (isset($_POST['submit'])) {
       border-radius: 50%;
       background-size: cover;
       background-position: center;
-      background-color: gray;
       }
   </style>
 </body>
