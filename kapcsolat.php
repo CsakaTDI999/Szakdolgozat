@@ -10,7 +10,7 @@ $conn = mysqli_connect($servername,$username,$password,$dbname);
 
 
 if (!$conn) {
-  die('Kapcsolódási hiba:  '.mysqli_connect_errno().' '.mysqli_connect_error());
+  die('Kapcsolódási hiba:  '.mysqli_connect_error().' '.mysqli_connect_error());
 }
 
 mysqli_query($conn,"SET NAMES 'UTF8'");
