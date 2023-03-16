@@ -33,6 +33,7 @@
               </ul>
               </li>
           </ul>
+          
           <ul class="navbar-nav me-0 mb-2 mb-lg-0">
           <?php
   session_start();
@@ -51,6 +52,38 @@
           </ul>
       </div>
     </div>
+    <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+  <li class="nav-item dropdown">
+  <?php
+
+if (isset($_SESSION['felhasznalonev'])) {
+
+  echo '<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle profilom-button" href="#" id="userProfileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profilom</a>
+          <ul class="dropdown-menu" aria-labelledby="userProfileDropdown">';
+            
+          $profilePicture = isset($_SESSION['profilkep']) ?  $_SESSION['profilkep'] : 'default_profile_picture.png';
+
+          echo '<li class="dropdown-item">
+                  <img src="' . $profilePicture . '" class="img-fluid rounded-circle" style="width: 50px; height: auto;">
+                  <p>' . $_SESSION['felhasznalonev'] . '</p>
+                </li>';
+                 echo '<li><hr class="dropdown-divider"></li>';
+                 echo '<li><a class="dropdown-item" href="kijelentkezes.php">Kijelentkezés</a></li>';
+                echo '</ul></li>';
+
+          } else {
+            echo '<li class="nav-item">
+           <a class="nav-link" aria-current="page" href="regisztracio.php">Regisztráció</a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="Belepes.php">Belépés</a>
+                  </li>';
+}
+?>
+
+  </ul>
+</li>
   </nav>
     
   
@@ -91,8 +124,18 @@
   .image-container p {
   color: white;
   font-size: 1.8em;
-}
+  }
 
+  .profilom-button {
+    background-color: #6c757d; /* This is a grey color */
+    color: white;
+    border: none;
+  }
+
+  .profilom-button:hover {
+    background-color: #5a6268; /* This is a slightly darker grey color for hover */
+    color: white;
+  }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

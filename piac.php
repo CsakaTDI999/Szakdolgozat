@@ -63,51 +63,46 @@ WHERE h.ID=f.ID";
 
  $result = mysqli_query($conn, $sql);
 
+ 
 if (mysqli_num_rows($result) > 0) {
-  while ($row = mysqli_fetch_assoc($result)) {
-    echo '<div class="card mb-3">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="' . ($row['kep'] ? $row['kep'] : 'nincsprofilkep.png') . '" class="card-img-top" alt="' . $row['Nev'] . '">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">' . $row['Nev'] . '</h5>
-          <p class="card-text">' . $row['leiras'] . '</p>
-          <p class="card-text"><small class="text-muted">' . $row['hely'] . ' - ' . $row['evjarat'] . '</small></p>
-          <p class="card-text"><small class="text-muted">Ár: ' . $row['ar'] . '</small></p>
-          <p class="card-text"><small class="text-muted">' . $row['felhasznalonev'] . ' - ' . $row['telefonszam'] . '</small></p>
-        </div>
-      </div>
-    </div>
-  </div>';
-
-  }
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="' . ($row['kep'] ? $row['kep'] : 'nincsprofilkep.png') . '" class="card-img-top" alt="' . $row['Nev'] . '">
+            </div>
+            <div class="col-md-7 d-flex align-items-center">
+            <div class="card-body">
+            <div class="row">
+            <div class="col-8">
+                <h5 class="card-title">' . $row['Nev'] . '</h5>
+                <p class="card-text">' . $row['leiras'] . '</p>
+            </div>
+            <div class="col-4">
+                <p class="card-text"><small class="text-muted">Évjárat: ' . $row['evjarat'] . '</small></p>
+                <p class="card-text"><small class="text-muted">Lakhely: ' . $row['hely'] . '</small></p>
+                <p class="card-text"><small class="text-muted">Hírdető: ' . $row['felhasznalonev'] . '</small></p>
+                <p class="card-text"><small class="text-muted">Elérhetőség:' . $row['telefonszam'] . '</small></p>
+             </div>
+             </div>
+             </div>
+             </div>
+                <div class="col-md-1 d-flex align-items-center">
+                  <div class="card-body">
+                    <p class="card-text"><small class="text-muted">Ár: ' . $row['ar'] . '</small></p>
+                </div>
+              </div>
+           </div>
+         </div>';
+    }
 } else {
-  echo "Nincs találat.";
+    echo "Nincs találat.";
 }
 
 mysqli_close($conn);
 ?>
 
-<div class="container">
-  <?php while ($row = mysqli_fetch_assoc($result)): ?>
-    <div class="card mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="<?php echo $row['kep'] ? $row['kep'] : 'nincsprofilkep.png'; ?>" class="card-img-top" alt="<?php echo $row['Nev']; ?>">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo $row['Nev']; ?></h5>
-            <p class="card-text"><?php echo $row['leiras']; ?></p>
-            <p class="card-text"><small class="text-muted"><?php echo $row['hely']; ?> - <?php echo $row['evjarat']; ?></small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  <?php endwhile; ?>
-</div>
+
 
 <style>
   .card {
