@@ -57,28 +57,31 @@
   <?php
  require_once('kapcsolat.php');
 
- $sql = "SELECT h.ID, h.Nev, h.leiras, h.hely, h.kep, h.evjarat, f.felhasznalonev, f.telefonszam
+ $sql = "SELECT h.alkatresz_id, h.Nev, h.leiras, h.hely, h.kep, h.evjarat, h.ar, f.felhasznalonev, f.telefonszam
 FROM h_alkatresz h, felhasznalo f
-WHERE h.felhasznalo_id=f.ID";
+WHERE h.ID=f.ID";
+
  $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
   while ($row = mysqli_fetch_assoc($result)) {
     echo '<div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="' . ($row['kep'] ? $row['kep'] : 'nincsprofilkep.png') . '" class="card-img-top" alt="' . $row['Nev'] . '">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">' . $row['Nev'] . '</h5>
-                  <p class="card-text">' . $row['leiras'] . '</p>
-                  <p class="card-text"><small class="text-muted">' . $row['hely'] . ' - ' . $row['evjarat'] . '</small></p>
-                  <p class="card-text"><small class="text-muted">' . $row['felhasznalonev'] . ' - ' . $row['telefonszam'] . '</small></p>
-                </div>
-              </div>
-            </div>
-          </div>';
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="' . ($row['kep'] ? $row['kep'] : 'nincsprofilkep.png') . '" class="card-img-top" alt="' . $row['Nev'] . '">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">' . $row['Nev'] . '</h5>
+          <p class="card-text">' . $row['leiras'] . '</p>
+          <p class="card-text"><small class="text-muted">' . $row['hely'] . ' - ' . $row['evjarat'] . '</small></p>
+          <p class="card-text"><small class="text-muted">Ár: ' . $row['ar'] . '</small></p>
+          <p class="card-text"><small class="text-muted">' . $row['felhasznalonev'] . ' - ' . $row['telefonszam'] . '</small></p>
+        </div>
+      </div>
+    </div>
+  </div>';
+
   }
 } else {
   echo "Nincs találat.";

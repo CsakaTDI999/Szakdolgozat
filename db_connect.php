@@ -47,3 +47,4 @@ if ($email_check > 0 || $name_check > 0 || $phone_check > 0) {
     echo "Hiba: " . $sql . "<br>" . mysqli_error($conn);
   }
 }
+

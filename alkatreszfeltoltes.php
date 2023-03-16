@@ -57,13 +57,18 @@
 				<input type="text" class="form-control" id="leiras" name="leiras" required>
 			</div>
            
+      <div class="form-group">
+    <label for="ar">Ár:</label>
+    <input type="number" step="0.01" class="form-control" id="ar" name="ar" required>
+</div>
+
             <div class="form-group">
 				<label for="hely">Lakhely:</label>
 				<input type="text" class="form-control" id="hely" name="hely" required>
 			</div>
            
             <label for="kep">Fénykép:</label>
-				<input type="file" class="form-control-file" id="kep" name="kep">
+            <input type="file" class="form-control-file" id="kep" name="kep" accept="image/*">
 
             
 			
