@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['ID'] = $row['ID'];
         $_SESSION['felhasznalonev'] = $row['felhasznalonev'];
         $_SESSION['email'] = $row['email'];
+        $_SESSION['admin'] = $row['admin'];
         $success = "Sikeres bejelentkezés!";
         header("Location: index.php"); 
         exit(); 
@@ -56,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <button type="submit" name="login" class="btn btn-primary btn-danger">Belépés</button>
   
-  <button href="index.php" name="back" class="btn btn-primary btn-danger">Vissza</button>
+  <a class="btn btn-primary btn-danger" href="index.php">Vissza</a>
   
 <style>
   

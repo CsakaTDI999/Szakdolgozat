@@ -30,14 +30,18 @@ if (isset($_POST['submit'])) {
     $fileName = basename($_FILES['profile_picture']['name']);
     $targetFile = $uploadPath . $fileName;
   
-    if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
-      $stmt = $conn->prepare('UPDATE felhasznalo SET profilkep = ? WHERE ID = ?');
-      $stmt->bind_param('si', $fileName, $_SESSION['ID']);
-      $stmt->execute();
-      $row['profilkep'] = $fileName;
-    }
+    
+if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
+  $stmt = $conn->prepare('UPDATE felhasznalo SET profilkep = ? WHERE ID = ?');
+  $stmt->bind_param('si', $fileName, $_SESSION['ID']);
+  $stmt->execute();
+  $row['profilkep'] = $fileName;
+  $_SESSION['profilkep'] = $fileName; 
+}
+
+
   }
-  
+
   
 ?>
 
@@ -65,7 +69,19 @@ if (isset($_POST['submit'])) {
                   <?php else: ?>
                     <img src="nincsprofilkep.png" class="profile-image" alt="Profilkep">
                     <?php endif; ?>
-            </div>
+                    </div>
+                    <div class="text-center mb-3">
+                <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1): ?>
+                  <span class="badge bg-danger text-white">Admin</span>
+                <?php else: ?>
+                  <span class="badge bg-danger text-white">Guest</span>
+                <?php endif; ?>
+              </div>
+            <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1): ?>
+          <div class="text-center mb-3">
+            <a href="admin_users.php" class="btn btn-primary btn-danger">Felhasználók kezelése</a>
+                </div>
+                <?php endif; ?>
             <form method="POST" action="profil.php" enctype="multipart/form-data">
               <div class="form-group mb-3">
                 <label for="username">Felhasználónév</label>

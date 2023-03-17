@@ -44,8 +44,7 @@
   <button type="button" name="submit" class="btn btn-primary btn-danger" onclick="submitForm()">Regisztráció</button>
 
 
-  <button href="index.php" name="back" class="btn btn-primary btn-danger">Vissza</button>
-  
+  <a class="btn btn-primary btn-danger" href="index.php">Vissza</a>  
 <style>
 
   h2{
