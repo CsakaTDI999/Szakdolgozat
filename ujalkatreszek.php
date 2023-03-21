@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php"><img src="logo.png" class="img-fluid"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,46 +36,38 @@
   session_start();
 
   if (isset($_SESSION['felhasznalonev'])) {
-    echo '<li class="nav-item"><a class="nav-link" aria-current="page" href="alkatreszfeltoltes.php">Hirdetésfeladás</a></li>';
-  } else {
-    echo '<li class="nav-item">
-            <a class="nav-link" aria-current="page" href="regisztracio.php">Regisztráció</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="Belepes.php">Belépés</a>
-          </li>';
-  }
-?>
-
-<li class="nav-item dropdown">
-<?php
-  if (isset($_SESSION['felhasznalonev'])) {
+    echo '<li class="nav-item dropdown">';
     echo '<a class="nav-link dropdown-toggle profilom-button" href="#" id="userProfileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profilom</a>';
     echo '<ul class="dropdown-menu" aria-labelledby="userProfileDropdown">';
 
     $profilePicture = 'nincsprofilkep.png';
 
-if (isset($_SESSION['profilkep']) && !empty($_SESSION['profilkep']) && file_exists('uploads/' . $_SESSION['profilkep'])) {
-    $profilePicture = 'uploads/' . $_SESSION['profilkep'];
-}
+    if (isset($_SESSION['profilkep']) && !empty($_SESSION['profilkep']) && file_exists('uploads/' . $_SESSION['profilkep'])) {
+        $profilePicture = 'uploads/' . $_SESSION['profilkep'];
+    }
 
-echo '<li class="dropdown-item">
-          <img src="' . $profilePicture . '" class="img-fluid rounded-circle" style="width: 50px; height: auto;">
-          <p>' . $_SESSION['felhasznalonev'] . '</p>
-      </li>';
+    echo '<li class="dropdown-item">
+            <img src="' . $profilePicture . '" class="img-fluid rounded-circle" style="width: 50px; height: auto;">
+            <p>' . $_SESSION['felhasznalonev'] . '</p>
+        </li>';
 
-echo '<li><hr class="dropdown-divider"></li>';
-echo '<li><a class="dropdown-item" href="kijelentkezes.php">Kijelentkezés</a></li>';
-echo '</ul>';
-  }
-  echo '</li>'; 
-  echo '</ul>'; 
-?>
-      
-      </div>
-    </div>
-  </nav>
-    
+    echo '<li><hr class="dropdown-divider"></li>';
+    echo '<li><a class="dropdown-item" href="kijelentkezes.php">Kijelentkezés</a></li>';
+    echo '</ul>';
+    echo '</li>';
+    echo '<li class="nav-item"><a class="nav-link" aria-current="page" href="alkatreszfeltoltes.php">Hirdetésfeladás</a></li>';
+  } else {
+    echo '<li class="nav-item">
+    <a class="nav-link" aria-current="page" href="regisztracio.php">Regisztráció</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="Belepes.php">Belépés</a>
+    </li>';
+    }
+    ?>
+     </div>
+</div>
+</nav>
   
   
 <div class="image-container" style="text-align: center;">
