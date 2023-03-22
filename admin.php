@@ -57,7 +57,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
                     <td><?php echo $user['telefonszam']; ?></td>
                     <td><?php echo $user['admin'] ? 'Igen' : 'Nem'; ?></td>
                     <td>
-                        <a href="edit_user.php?id=<?php echo $user['ID']; ?>" class="btn btn-warning">Szerkesztés</a>
+                        <a href="felhasznalo_szerkesztes.php?id=<?php echo $user['ID']; ?>" class="btn btn-warning">Szerkesztés</a>
                         <a href="felhasznalo_torles.php?id=<?php echo $user['ID']; ?>" class="btn btn-danger">Törlés</a>
                     </td>
                     <?php endforeach; ?>    

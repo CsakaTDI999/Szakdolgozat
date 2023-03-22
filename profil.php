@@ -14,18 +14,19 @@ $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 
 if (isset($_POST['submit'])) {
-  $newUsername = $_POST['username'];
   $newProfilePicture = $_FILES['profile_picture']['name'];
+  $newUsername = $_POST['username'];
 
+ 
   if (!empty($newUsername)) {
     $stmt = $conn->prepare('UPDATE felhasznalo SET felhasznalonev = ? WHERE ID = ?');
     $stmt->bind_param('si', $newUsername, $_SESSION['ID']);
     $stmt->execute();
     $row['felhasznalonev'] = $newUsername;
   }
+}
   
   
-  }
     if (!empty($_FILES['profile_picture']['name'])) {
     $fileName = basename($_FILES['profile_picture']['name']);
     $targetFile = $uploadPath . $fileName;
@@ -91,7 +92,7 @@ if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
               <label for="profile_picture">Profilkép</label>
               <input type="file" class="form-control" id="profile_picture" name="profile_picture">
                   </div>
-              <button type="submit" class="btn btn-primary btn-danger">Mentés</button>
+              <button type="submit" name="submit" class="btn btn-primary btn-danger">Mentés</button>
               <a class="btn btn-primary btn-danger" href="index.php">Vissza</a>
             </form>
           </div>
