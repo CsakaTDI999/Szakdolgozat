@@ -28,7 +28,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
             background-color: #343a40;
             color: #fff;
         }
-        table.table-striped {
+        .table {
             color: #fff;
         }
     </style>
@@ -37,7 +37,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
     <div class="container mt-5">
         <h1 class="text-center mb-4">Admin Panel</h1>
         <a href="profil.php" class="btn btn-danger btn-primary mb-3">Vissza a profilhoz</a>
-        <table class="table table-striped">
+        <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -58,7 +58,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
                     <td><?php echo $user['admin'] ? 'Igen' : 'Nem'; ?></td>
                     <td>
                         <a href="edit_user.php?id=<?php echo $user['ID']; ?>" class="btn btn-warning">Szerkesztés</a>
-                        <a href="delete_user.php?id=<?php echo $user['ID']; ?>" class="btn btn-danger">Törlés</a>
+                        <a href="felhasznalo_torles.php?id=<?php echo $user['ID']; ?>" class="btn btn-danger">Törlés</a>
                     </td>
                     <?php endforeach; ?>    
                 </tr>
