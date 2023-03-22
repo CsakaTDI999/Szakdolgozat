@@ -61,8 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Felhasználó Szerkesztése</h1>
-        <a href="admin.php" class="btn btn-danger btn-primary mb-3">Vissza az Admin Panelhez</a>
+    <h1 class="text-center mb-2">Felhasználó: <span style="color: #DC3545;"><?php echo $user['felhasznalonev']; ?></h1>
+    <img src="uploads/<?php echo $user['profilkep']; ?>"  class="rounded mx-auto d-block mb-2" style="max-width: 200px; max-height: 200px;">
+    <a href="admin.php" class="btn btn-danger btn-primary mb-3">Vissza az Admin Panelhez</a>
         <form action="" method="POST">
             <div class="mb-3">
                 <label for="felhasznalonev" class="form-label">Felhasználónév</label>

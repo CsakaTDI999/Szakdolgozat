@@ -1,17 +1,6 @@
 <?php
 
-require_once('kapcsolat.php');
-
-if (!isset($_SESSION['ID'])) {
-  header('Location: Belepes.php');
-  exit();
-}
-
-$stmt = $conn->prepare('SELECT * FROM felhasznalo WHERE ID = ?');
-$stmt->bind_param('i', $_SESSION['ID']);
-$stmt->execute();
-$result = $stmt->get_result();
-$row = $result->fetch_assoc();
+include('felhasznalo_adat.php');
 
 if (isset($_POST['submit'])) {
   $newProfilePicture = $_FILES['profile_picture']['name'];
@@ -117,10 +106,11 @@ if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
     }
 
     .profile-image {
-      width: 120px;
-      height: 120px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
       background-size: cover;
+      object-fit: cover; 
       background-position: center;
       }
   </style>
