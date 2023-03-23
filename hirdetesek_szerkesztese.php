@@ -6,8 +6,8 @@ if (!isset($_SESSION['ID']) || !isset($_SESSION['admin']) || $_SESSION['admin'] 
   exit();
 }
 
-// Hírdetések lekérdezése
-$stmt = $conn->prepare('SELECT * FROM h_alkatresz');
+
+$stmt = $conn->prepare('SELECT h_alkatresz.*, felhasznalo.felhasznalonev FROM h_alkatresz JOIN felhasznalo ON h_alkatresz.ID = felhasznalo.ID');
 $stmt->execute();
 $result = $stmt->get_result();
 $hirdetesek = $result->fetch_all(MYSQLI_ASSOC);
@@ -45,21 +45,23 @@ $hirdetesek = $result->fetch_all(MYSQLI_ASSOC);
                     <th>Név</th>
                     <th>Leírás</th>
                     <th>Ár</th>
+                    <th>Hírdető</th>
                     <th>Műveletek</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($hirdetesek as $hirdetes): ?>
-                <tr>
-                    <td><?php echo $hirdetes['ID']; ?></td>
-                    <td><?php echo $hirdetes['Nev']; ?></td>
-                    <td><?php echo $hirdetes['leiras']; ?></td>
-                    <td><?php echo $hirdetes['ar']; ?></td>
-                    <td>
-                        <a href="hirdetes_szerkesztes.php?id=<?php echo $hirdetes['ID']; ?>" class="btn btn-warning">Szerkesztés</a>
-                        <a href="hirdetes_torles.php?id=<?php echo $hirdetes['ID']; ?>" class="btn btn-danger">Törlés</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?php echo $hirdetes['alkatresz_id']; ?></td>
+                        <td><?php echo $hirdetes['Nev']; ?></td>
+                        <td><?php echo $hirdetes['leiras']; ?></td>
+                        <td><?php echo $hirdetes['ar']; ?></td>
+                        <td><?php echo $hirdetes['felhasznalonev']; ?></td>
+                        <td>
+                            <a href="hirdetes_szerkesztes.php?id=<?php echo $hirdetes['alkatresz_id']; ?>" class="btn btn-warning">Szerkesztés</a>
+                            <a href="hirdetes_torles.php?id=<?php echo $hirdetes['alkatresz_id']; ?>" class="btn btn-danger">Törlés</a>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
