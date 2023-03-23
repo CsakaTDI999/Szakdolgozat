@@ -67,11 +67,12 @@ if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
                   <span class="badge bg-danger text-white">Guest</span>
                 <?php endif; ?>
               </div>
-            <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1): ?>
-          <div class="text-center mb-3">
-            <a href="admin.php" class="btn btn-primary btn-danger">Felhasználók kezelése</a>
-                </div>
-                <?php endif; ?>
+              <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1): ?>
+             <div class="text-center mb-3">
+              <a href="admin.php" class="btn btn-primary btn-danger">Felhasználók kezelése</a>
+             <a href="hirdetesek_szerkesztese.php" class="btn btn-primary btn-danger">Hírdetések szerkesztése</a> <!-- Új gomb -->
+               </div>
+              <?php endif; ?>
             <form method="POST" action="profil.php" enctype="multipart/form-data">
               <div class="form-group mb-3">
                 <label for="username">Felhasználónév</label>

@@ -45,6 +45,7 @@ if (isset($_SESSION['felhasznalonev'])) {
 <?php
 if (isset($_SESSION['felhasznalonev'])) {
   echo '<li class="dropdown-item">';
+  echo '<div class="dropdown-content">';
   if (isset($row['profilkep']) && $row['profilkep']):
       echo '<img src="uploads/' . $row['profilkep'] . '" class="profile-image" alt="Profilkep">';
   else:
@@ -124,6 +125,10 @@ if (isset($_SESSION['felhasznalonev'])) {
 
 .nav-item.dropdown {
   position: relative;
+}
+
+.dropdown-content {
+  text-align: center;
 }
 
   .dropdown-menu {
