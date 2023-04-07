@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <title>Alkatrész hozzáadása - TuneYourA3</title>
+  <title>TuneYourA3</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
@@ -52,6 +52,30 @@
     </form>
  </div>
  
+ <?php
+  include('felhasznalo_adat.php');
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $tipus = $_POST["tipus"];
+    $kategoria = $_POST["kategoria"];
+    $nev = $_POST["nev"];
+    $leiras = $_POST["leiras"];
+    
+    $kep = $_FILES["kep"]["name"];
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["kep"]["name"]);
+    move_uploaded_file($_FILES["kep"]["tmp_name"], $target_file);
+
+    
+    $sql = "INSERT INTO `$tipus` (nev, kategoria, leiras, kep) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssss", $nev, $kategoria, $leiras, $kep);
+    $stmt->execute();
+
+    echo "Az alkatrész sikeresen hozzáadva!";
+  }
+?>
+
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
