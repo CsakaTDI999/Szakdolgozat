@@ -72,7 +72,11 @@ if (isset($_SESSION['felhasznalonev'])) {
      </div>
 </div>
 </nav>
-  
+
+<div class="add-part-btn-container" style="text-align: center; margin-bottom: 20px;">
+  <a href="ujalkatresz_hozzaadasa.php" class="btn btn-primary">Alkatrész hozzáadása</a>
+</div>
+
   
 <div class="image-container" style="text-align: center;">
   <div>
