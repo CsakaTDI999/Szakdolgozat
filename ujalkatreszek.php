@@ -9,6 +9,8 @@
 </head>
 <body>
 <?php include('felhasznalo_adat.php'); ?>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php"><img src="logo.png" class="img-fluid"></a>
@@ -73,9 +75,13 @@ if (isset($_SESSION['felhasznalonev'])) {
 </div>
 </nav>
 
-<div class="add-part-btn-container" style="text-align: center; margin-bottom: 20px;">
-  <a href="ujalkatresz_hozzaadasa.php" class="btn btn-primary">Alkatrész hozzáadása</a>
-</div>
+<?php
+if (isset($_SESSION['felhasznalonev']) && $_SESSION['admin'] == 1) {
+    echo '<div class="add-part-btn-container" style="text-align: center; margin-bottom: 20px;">
+            <a href="ujalkatresz_hozzaadasa.php" class="btn btn-danger">Alkatrész hozzáadása</a>
+          </div>';
+}
+?>
 
   
 <div class="image-container" style="text-align: center;">

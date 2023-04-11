@@ -38,6 +38,15 @@ $hirdetesek = $result->fetch_all(MYSQLI_ASSOC);
     <div class="container mt-5">
         <h1 class="text-center mb-4">Hírdetések szerkesztése</h1>
         <a href="profil.php" class="btn btn-danger btn-primary mb-3">Vissza a profilhoz</a>
+        <div class="mb-3">
+    <label for="tabla-valaszto" class="form-label">Válassz táblát:</label>
+    <select class="form-select" id="tabla-valaszto" name="tabla">
+        <option value="h_alkatresz">h_alkatresz</option>
+        <option value="8l">8l</option>
+        <option value="8p">8p</option>
+        <option value="8v">8v</option>
+    </select>
+</div>
         <table class="table">
             <thead>
                 <tr>
@@ -66,6 +75,40 @@ $hirdetesek = $result->fetch_all(MYSQLI_ASSOC);
             </tbody>
         </table>
     </div>
+    
+    
+    <script> //forrás: stac koverflow
+    document.addEventListener('DOMContentLoaded', () => {
+        const tablaValaszto = document.getElementById('tabla-valaszto');
+        const tableBody = document.querySelector('.table tbody');
 
+        tablaValaszto.addEventListener('change', async (e) => {
+            const selectedTable = e.target.value;
+            const response = await fetch(`fetch_table_data.php?tabla=${selectedTable}`);
+            const data = await response.json();
+
+            tableBody.innerHTML = '';
+
+            data.forEach((row) => {
+                const tr = document.createElement('tr');
+
+                Object.values(row).forEach((cellValue) => {
+                    const td = document.createElement('td');
+                    td.textContent = cellValue;
+                    tr.appendChild(td);
+                });
+
+                const actionsTd = document.createElement('td');
+                actionsTd.innerHTML = `
+                    <a href="hirdetes_szerkesztese.php?id=${row.alkatresz_id}" class="btn btn-warning">Szerkesztés</a>
+                    <a href="hirdetes_torles.php?id=${row.alkatresz_id}" class="btn btn-danger">Törlés</a>
+                `;
+                tr.appendChild(actionsTd);
+
+                tableBody.appendChild(tr);
+            });
+        });
+    });
+</script>
 </body>
 </html>
