@@ -61,27 +61,27 @@
  
   <div class="image-row">
   <div class="image-column">
-    <a href="alkatreszek.php?kategoria=optika"><img src="Képek/optika.png" alt="Kép 1"></a>
+  <a href="alkatreszek.php?kategoria=optika&model=8l"><img src="Képek/optika.png" alt="Kép 1"></a>
     <p>Optika</p>
   </div>
   <div class="image-column">
-    <a href="alkatreszek.php?kategoria=motor"><img src="Képek/motor.png" alt="Kép 2"></a>
+    <a href="alkatreszek.php?kategoria=motor&model=8l"><img src="Képek/motor.png" alt="Kép 2"></a>
     <p>Motor</p>
   </div>
   <div class="image-column">
-    <a href="alkatreszek.php?kategoria=futomu"><img src="Képek/futomu.png" alt="Kép 3"></a>
+    <a href="alkatreszek.php?kategoria=futomu&model=8l"><img src="Képek/futomu.png" alt="Kép 3"></a>
     <p>Futómű</p>
   </div>
   <div class="image-column">
-    <a href="alkatreszek.php?kategoria=sportfek"><img src="Képek/fek.png" alt="Kép 4"></a>
+    <a href="alkatreszek.php?kategoria=sportfek&model=8l"><img src="Képek/fek.png" alt="Kép 4"></a>
     <p>Sportfék</p>
   </div>
   <div class="image-column">
-  <a href="alkatreszek.php?kategoria=legszuro"><img src="Képek/legszuro.png" alt="Kép 5"></a>
+  <a href="alkatreszek.php?kategoria=legszuro&model=8l"><img src="Képek/legszuro.png" alt="Kép 5"></a>
     <p>levegőszűrő</p>
   </div>
   <div class="image-column">
-  <a href="alkatreszek.php?kategoria=kipufogo"><img src="Képek/kipufogo.png" width="100px" height="100px" alt="Kép 6" ></a>
+  <a href="alkatreszek.php?kategoria=kipufogo&model=8l"><img src="Képek/kipufogo.png" width="100px" height="100px" alt="Kép 6" ></a>
     <p>Sportkipufogó</p>
   </div>
 </div>

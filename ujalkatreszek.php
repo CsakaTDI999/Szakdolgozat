@@ -80,15 +80,15 @@ if (isset($_SESSION['felhasznalonev'])) {
   
 <div class="image-container" style="text-align: center;">
   <div>
-    <a href="alkatreszek.php" data-model="8l"><img src="Képek/audi8l.png" alt="8l" /></a>
+    <a href="8l.php" data-model="8l"><img src="Képek/audi8l.png" alt="8l" /></a>
     <p>A3 8L (1996-2003)</p>
   </div>
   <div>
-    <a href="alkatreszek.php" data-model="8p"><img src="Képek/audi8p.png" alt="8p" /></a>
+    <a href="8p.php" data-model="8p"><img src="Képek/audi8p.png" alt="8p" /></a>
     <p>A3 8P(2003-2012)</p>
   </div>
   <div>
-    <a href="alkatreszek.php" data-model="8v"><img src="Képek/audi8v.png" alt="8v" /></a>
+    <a href="8v.php" data-model="8v"><img src="Képek/audi8v.png" alt="8v" /></a>
     <p>A3 8V(2012-)</p>
   </div>
 </div>
@@ -161,17 +161,7 @@ if (isset($_SESSION['felhasznalonev'])) {
 
 
   </style>
-  <script>
-  const modelLinks = document.querySelectorAll('.image-container a');
-
-  modelLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const model = e.target.closest('a').dataset.model;
-      window.location.href = `alkatreszek.php?model=${model}`;
-    });
-  });
-</script>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
   </html>

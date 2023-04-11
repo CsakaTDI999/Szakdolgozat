@@ -1,13 +1,16 @@
 <?php
 require_once('kapcsolat.php');
 
+$model = $_GET['model'] ?? '8l';
+
 if (isset($_GET['kategoria'])) {
     $kategoria = $_GET['kategoria'];
 } else {
     die("Nem található a kategória");
 }
 
-$sql = "SELECT * FROM 8l WHERE kategoria = '$kategoria'";
+
+$sql = "SELECT * FROM $model WHERE kategoria = '$kategoria'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
