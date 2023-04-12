@@ -67,8 +67,8 @@ $hirdetesek = $result->fetch_all(MYSQLI_ASSOC);
 <td><?php echo $hirdetes['leiras']; ?></td>
 <td><?php echo $hirdetes['kep']; ?></td>
 <td>
-<a href="ujhirdetes_szerkesztese.php?table=<?= $selected_table ?>&id=<?php echo $hirdetes['id']; ?>" class="btn btn-warning">Szerkesztés</a>
-<a href="ujhirdetes_torles.php?table=<?= $selected_table ?>&id=<?php echo $hirdetes['id']; ?>" class="btn btn-danger">Törlés</a>
+<a href="ujalkatreszek_szerkesztese.php?table=<?= $selected_table ?>&id=<?php echo $hirdetes['id']; ?>" class="btn btn-warning">Szerkesztés</a>
+<a href="uj_torles.php?table=<?= $selected_table ?>&id=<?php echo $hirdetes['id']; ?>" class="btn btn-danger">Törlés</a>
 </td>
 </tr>
 <?php endforeach; ?>
