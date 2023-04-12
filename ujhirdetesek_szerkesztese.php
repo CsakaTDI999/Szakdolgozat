@@ -6,8 +6,9 @@ if (!isset($_SESSION['ID']) || !isset($_SESSION['admin']) || $_SESSION['admin'] 
   exit();
 }
 
+$selected_table = isset($_POST['table_select']) ? $_POST['table_select'] : '8l';
 
-$stmt = $conn->prepare('SELECT h_alkatresz.*, felhasznalo.felhasznalonev FROM h_alkatresz JOIN felhasznalo ON h_alkatresz.ID = felhasznalo.ID');
+$stmt = $conn->prepare("SELECT * FROM $selected_table");
 $stmt->execute();
 $result = $stmt->get_result();
 $hirdetesek = $result->fetch_all(MYSQLI_ASSOC);
@@ -37,35 +38,43 @@ $hirdetesek = $result->fetch_all(MYSQLI_ASSOC);
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Hírdetések szerkesztése</h1>
+        <form method="POST" action="ujhirdetesek_szerkesztese.php">
+          <label for="table_select">Válasszon táblát:</label>
+          <select name="table_select" id="table_select" onchange="this.form.submit()">
+            <option value="8l" <?= $selected_table === '8l' ? 'selected' : '' ?>>8l</option>
+            <option value="8p" <?= $selected_table === '8p' ? 'selected' : '' ?>>8p</option>
+            <option value="8v" <?= $selected_table === '8v' ? 'selected' : '' ?>>8v</option>
+          </select>
+        </form>
         <a href="profil.php" class="btn btn-danger btn-primary mb-3">Vissza a profilhoz</a>
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Név</th>
+                    <th>Kategória</th>
                     <th>Leírás</th>
-                    <th>Ár</th>
-                    <th>Hírdető</th>
+                    <th>Kép</th>
                     <th>Műveletek</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($hirdetesek as $hirdetes): ?>
                     <tr>
-                        <td><?php echo $hirdetes['alkatresz_id']; ?></td>
-                        <td><?php echo $hirdetes['Nev']; ?></td>
-                        <td><?php echo $hirdetes['leiras']; ?></td>
-                        <td><?php echo $hirdetes['ar']; ?></td>
-                        <td><?php echo $hirdetes['felhasznalonev']; ?></td>
-                        <td>
-                            <a href="hirdetes_szerkesztese.php?id=<?php echo $hirdetes['alkatresz_id']; ?>" class="btn btn-warning">Szerkesztés</a>
-                            <a href="hirdetes_torles.php?id=<?php echo $hirdetes['alkatresz_id']; ?>" class="btn btn-danger">Törlés</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+                        <td><?php echo $hirdetes['id']; ?></td>
+                        <td><?php echo $hirdetes['nev']; ?></td>
+<td><?php echo $hirdetes['kategoria']; ?></td>
+<td><?php echo $hirdetes['leiras']; ?></td>
+<td><?php echo $hirdetes['kep']; ?></td>
+<td>
+<a href="ujhirdetes_szerkesztese.php?table=<?= $selected_table ?>&id=<?php echo $hirdetes['id']; ?>" class="btn btn-warning">Szerkesztés</a>
+<a href="ujhirdetes_torles.php?table=<?= $selected_table ?>&id=<?php echo $hirdetes['id']; ?>" class="btn btn-danger">Törlés</a>
+</td>
+</tr>
+<?php endforeach; ?>
+</tbody>
+</table>
+</div>
 
 </body>
 </html>
