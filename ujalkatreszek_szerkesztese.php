@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nev = $_POST['nev'];
     $kategoria = $_POST['kategoria'];
     $leiras = $_POST['leiras'];
-    $kep = $_POST['kep'];
+    $ar = $_POST['ar'];
 
-    $stmt = $conn->prepare("UPDATE $selected_table SET nev = ?, kategoria = ?, leiras = ?, kep = ? WHERE id = ?");
-    $stmt->bind_param('ssssi', $nev, $kategoria, $leiras, $kep, $id);
+    $stmt = $conn->prepare("UPDATE $selected_table SET nev = ?, kategoria = ?, leiras = ?, ar = ? WHERE id = ?");
+    $stmt->bind_param('ssssi', $nev, $kategoria, $leiras, $ar, $id);
     $stmt->execute();
 
     header("Location: ujalkatreszek_szerkesztese.php");
@@ -75,6 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="leiras" class="form-label">leírás</label>
 <input type="text" class="form-control" id="leiras" name="leiras" value="<?php echo $hirdetes['leiras']; ?>" required>
 </div>
+<div class="mb-3">
+                <label for="ar" class="form-label">ár</label>
+                <input type="number" class="form-control" id="ar" name="ar" value="<?php echo $hirdetes['ar']; ?>" required>
+            </div>
 <button type="submit" class="btn btn-primary btn-danger">Mentés</button>
 </form>
 </div>

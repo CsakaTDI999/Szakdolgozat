@@ -69,24 +69,25 @@
 
 }
 
-.login-btn {
-  position: absolute;
-  top: 10px;
-  right: 120px; 
-  margin-right: 10px;
-  margin-right: 10px;
-  border-color: red;
-}
+.button-container {
+      position: absolute;
+      top: 10px;
+      right: 120px;
+      display: flex;
+      flex-direction: row;
+    }
 
-.user-info {
-  position: absolute;
-  top: 10px;
-  right: 150px; 
-  color: white;
-  font-weight: bold;
-  text-shadow: 2px 2px #000;
-}
+    .login-btn {
+      margin-right: 10px;
+      border-color: red;
+    }
 
+    .user-info {
+      color: white;
+      font-weight: bold;
+      text-shadow: 2px 2px #000;
+      margin-right: 10px;
+    }
 
   </style>
 </head>
@@ -94,7 +95,7 @@
   <video autoplay loop muted plays-inline class="indexvideo">
     <source src="indexvideo.mp4" type="video/mp4">
   </video>
-  
+  <div class="button-container">
   <?php
 session_start();
 
@@ -103,7 +104,6 @@ if (isset($_SESSION['ID'])) {
 }
 
 if (isset($felhasznalonev)) {
-  echo '<span class="user-info">Üdv, ' . $felhasznalonev . '</span>';
   echo '<a href="profil.php" class="btn btn-primary btn-danger mx-2">Profilom</a>';
   echo '<form method="post" action="kijelentkezes.php"><button type="submit" name="logout" class="btn btn-primary btn-danger login-btn">Kijelentkezés</button></form>';
 } else {
@@ -111,7 +111,7 @@ if (isset($felhasznalonev)) {
   echo '<a href="regisztracio.php" class="btn btn-primary btn-danger mx-2">Regisztráció</a>';
 }
 ?>
-
+</div>
   
   <div class="content">
     <img src="logo.png" alt="logo"><br><br>
