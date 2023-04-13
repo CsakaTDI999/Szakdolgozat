@@ -6,6 +6,7 @@ if (!isset($_SESSION['ID']) || !isset($_SESSION['admin']) || $_SESSION['admin'] 
     exit();
 }
 
+
 if (isset($_GET['table']) && isset($_GET['id'])) {
     $selected_table = $_GET['table'];
     $id = $_GET['id'];
@@ -17,13 +18,15 @@ if (isset($_GET['table']) && isset($_GET['id'])) {
     $hirdetes = $result->fetch_assoc();
 
     if (!$hirdetes) {
-        header("Location: ujalkatreszek_szerkesztese.php");
+        header("Location: profil.php");
         exit();
     }
 } else {
-    header("Location: ujalkatreszek_szerkesztese.php");
+    header("Location: profil.php");
     exit();
 }
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nev = $_POST['nev'];
@@ -38,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: ujalkatreszek_szerkesztese.php");
     exit();
 }
+
+
 ?>
 
 

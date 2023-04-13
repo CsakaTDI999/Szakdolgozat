@@ -16,7 +16,7 @@ if (isset($_GET['table']) && isset($_GET['id'])) {
 
    
 } else {
-    header("Location: ujalkatreszek_szerkesztese.php");
+    header("Location: profil.php");
     exit();
 }
 ?>
