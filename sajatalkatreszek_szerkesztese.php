@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('kapcsolat.php');
 
 if (!isset($_SESSION['ID'])) {
