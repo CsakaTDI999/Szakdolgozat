@@ -85,6 +85,8 @@
                         <div class="col-md-1 d-flex align-items-center">
                             <div class="card-body">
                             <p class="card-text"><small class="text-muted">ID: ' . $row['id'] . '</small></p>
+                            <p class="card-text"><small class="text-muted">Ár: ' . number_format($row['ar'], 2, ',', ' ') . ' Ft</small></p>
+                            
                         </div>
                         </div>
                     </div>

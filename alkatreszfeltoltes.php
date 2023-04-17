@@ -73,7 +73,7 @@
 			</div>
            
             <label for="kep">Fénykép:</label>
-            <input type="file" class="form-control-file" id="kep" name="kep" accept="image/*">
+            <input type="file" class="form-control-file" id="kep" name="kep">
 
             
 			
