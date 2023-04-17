@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once('kapcsolat.php');
 
 if (!isset($_SESSION['ID'])) {
     header('Location: index.php');
@@ -18,7 +18,7 @@ $advertisements = $result->fetch_all(MYSQLI_ASSOC);
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <title>Saját hírdetések szerkesztése</title>
+    <title>TuneYourA3.hu</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
