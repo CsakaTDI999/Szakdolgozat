@@ -70,33 +70,33 @@
 
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            echo '<div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="' . ($row['kep'] ? 'uploads/' . $row['kep'] : 'nincsprofilkep.png') . '" class="card-img-top" alt="' . $row['nev'] . '">
-                        </div>
-                        <div class="col-md-7 d-flex align-items-center">
-                        <div class="card-body">
-                        <div class="row">
-                        <div class="col-8">
-                            <h5 class="card-title">' . $row['nev'] . '</h5>
-                            <p class="card-text">' . $row['leiras'] . '</p>
-                        </div>
-                        <div class="col-4">
-                            <p class="card-text"><small class="text-muted">Kategória: ' . $row['kategoria'] . '</small></p>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        <div class="col-md-1 d-flex align-items-center">
-                            <div class="card-body">
-                            <p class="card-text"><small class="text-muted">ID: ' . $row['id'] . '</small></p>
-                            <p class="card-text"><small class="text-muted">Ár: ' . number_format($row['ar'], 2, ',', ' ') . ' Ft</small></p>
-                            
-                        </div>
-                        </div>
-                    </div>
-                </div>';
+          echo '<div class="card mb-3">
+          <div class="row g-0">
+              <div class="col-md-4">
+              <img src="' . ($row['kep'] ? 'uploads/' . $row['kep'] : 'nincsprofilkep.png') . '" class="card-img-top" alt="' . $row['nev'] . '">
+              </div>
+              <div class="col-md-7 d-flex align-items-center">
+              <div class="card-body">
+              <div class="row">
+              <div class="col-8">
+                  <h5 class="card-title">' . $row['nev'] . '</h5>
+                  <p class="card-text">' . $row['leiras'] . '</p>
+              </div>
+              <div class="col-4">
+                  <p class="card-text"><small class="text-muted">Kategória: ' . $row['kategoria'] . '</small></p>
+              </div>
+              </div>
+              </div>
+              </div>
+              <div class="col-md-1 d-flex align-items-center">
+                  <div class="card-body">
+                  <p class="card-text"><small class="text-muted">Típus: ' . $model . '</small></p>
+                  <p class="card-text"><small class="text-muted">Ár: ' . number_format($row['ar'], 2, ',', ' ') . ' Ft</small></p>
+                  
+              </div>
+              </div>
+          </div>
+      </div>';
         }
     } else {
       echo '<div class="container">
