@@ -49,7 +49,13 @@
       </div>
     </div>
   </nav>
-  
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-end mt-3">
+        <a href="ujalkatreszek.php" class="btn btn-danger">Vissza</a>
+      </div>
+    </div>
+  </div>
   <?php
     $model = $_GET['model'] ?? '8l';
 
@@ -93,7 +99,13 @@
                 </div>';
         }
     } else {
-        echo "Nincs találat.";
+      echo '<div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3 class="mt-5">Ops... Itt még nincs semmi :/</h3>
+        </div>
+      </div>
+    </div>';
     }
 
     $conn->close();
